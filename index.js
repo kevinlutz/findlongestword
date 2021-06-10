@@ -1,4 +1,5 @@
-//Return the length of the longest word in the provided sentence.
+//#1
+//Return the length of the LONGEST WORD in the provided sentence.
 //Your response should be a number.
 
 function findLongestWord(str) {
@@ -8,8 +9,8 @@ function findLongestWord(str) {
 findLongestWord('The dog ate my homework')
 
 
-
-//Change AM/PM to Military Time:
+//#2
+//Change AM/PM to MILITARY Time:
 function timeConversion(s) {
     const newString = s.substring(0, s.length-2);
     const array = newString.split(':');
@@ -28,3 +29,15 @@ function timeConversion(s) {
         return `${hour}:${minutes}:${seconds}`
     }
 }
+
+//#3
+//Reverse the provided string.
+//You may need to turn the string into an array before you can reverse it.
+//Your result must be a string.
+
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+reverseString("hello");
+
