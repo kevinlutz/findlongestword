@@ -74,4 +74,23 @@ function simpleArraySum(ar) {
 
 
 //#7
+//Compare the Triplets
+//why two if statements instead of and if/then statement?
+function compareTriplets(a, b) {
+    let alice = 0;
+    let bob = 0;
+    for (let i = 0; i < 3; i++) {
+       if (a[i] > b[i]) {
+           alice++
+       } 
+       if (a[i] < b[i]) {
+            bob++
+       }
+    }
+    return [alice, bob]
+}
+
+
+
+//#8
 //
