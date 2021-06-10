@@ -67,3 +67,11 @@ convertToF(30);
 
 
 //#6
+//Simply Array Sum
+function simpleArraySum(ar) {
+    return ar.reduce((acc, curr) => acc + curr, 0);
+}
+
+
+//#7
+//
