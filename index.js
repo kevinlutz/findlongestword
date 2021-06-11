@@ -115,4 +115,41 @@ function birthdayCakeCandles(candles) {
 }
 
 //#10
+//Plus Minus
+//What exactly is Object.value(hash) on line 137
+function plusMinus(arr) {
+    const hash = {
+        pos: 0,
+        neg: 0,
+        zero: 0
+    }
+
+    for(const num of arr){
+        if(num < 0){
+            hash.neg += 1
+        } else if (num > 0){
+            hash.pos += 1
+        } else {
+            hash.zero += 1
+        }
+    }
+
+    for(const value of Object.values(hash)){
+        console.log(value/arr.length)
+    }
+
+}
+
+
+//#11
+//Truncate a String
+//Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+function truncateString(str, num) {
+  return str.length > num ? str.slice(0, num) + '...' : str;
+}
+
+truncateString("Bring me a green and yellow basket", 8);
+
+
+//#12
 //
