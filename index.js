@@ -1,7 +1,7 @@
 //#1
 //Return the length of the LONGEST WORD in the provided sentence.
 //Your response should be a number.
-
+//Takeaway: Math.max, spread operator, split, map
 function findLongestWord(str) {
   return Math.max(...str.split(' ').map(word => word.length));
 }
@@ -11,6 +11,7 @@ findLongestWord('The dog ate my homework')
 
 //#2
 //Change AM/PM to MILITARY Time:
+//Takeaway: interpolate, split, divide into separate 
 function timeConversion(s) {
     const newString = s.substring(0, s.length-2);
     const array = newString.split(':');
@@ -76,6 +77,7 @@ function simpleArraySum(ar) {
 //#7
 //Compare the Triplets
 //why two if statements instead of and if/then statement?
+//Takeaway: 
 function compareTriplets(a, b) {
     let alice = 0;
     let bob = 0;
@@ -95,6 +97,7 @@ function compareTriplets(a, b) {
 //#8
 //A Very Big Sum
 //In this challenge, you are required to calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+//Takeaway: reduce/acc/curr
 function aVeryBigSum(ar) {
     return ar.reduce((acc, curr) => acc + curr, 0)
 }
@@ -103,6 +106,7 @@ function aVeryBigSum(ar) {
 //#9
 //Birthday Cake Candles
 //You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.
+//Takeaway: Math.max, spread operator, for const of
 function birthdayCakeCandles(candles) {
 
     const max = Math.max(...candles)
@@ -144,6 +148,7 @@ function plusMinus(arr) {
 //#11
 //Truncate a String
 //Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+//Takeaway: ternary operator, slice
 function truncateString(str, num) {
   return str.length > num ? str.slice(0, num) + '...' : str;
 }
@@ -152,4 +157,19 @@ truncateString("Bring me a green and yellow basket", 8);
 
 
 //#12
-//
+//Ends With
+//Check if a string (first argument, str) ends with the given target string (second argument, target).
+//This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+//Takeaway: slice with one parameter, can also use .endsWith, maybe also substr
+
+function confirmEnding(str, target) {
+  return str.slice(str.length - target.length) === target;
+}
+
+confirmEnding("He has to give me a new name", "name");
+
+
+//#13
+//Returns Largest Numbers In Array
+//Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+//Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
