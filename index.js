@@ -212,7 +212,7 @@ titleCase("I'm a little tea pot");
 
 //#17 Falsy Bouncer
 //Remove all falsy values from an array.
-//Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+//Takeaway: Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
 //Hint: Try converting each value to a Boolean.
 function bouncer(arr) {
   return arr.filter(Boolean);
@@ -228,7 +228,7 @@ function bouncer(arr) {
 //Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
 //For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
 //The arguments ["hello", "hey"] should return false because the string hello does not contain a y.
-
+//Takeaways: .toLowerCase(), for of, !negation, includes
 function mutation(arr) {
   const firstWord = arr[0].toLowerCase();
   const secondWord = arr[1].toLowerCase();
@@ -240,3 +240,23 @@ function mutation(arr) {
 }
 
 mutation(["hello", "hey"]);
+
+
+//#19 Where Do I Belong
+//Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+//For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
+function getIndexToIns(arr, num) {
+  arr.sort((a, b) => a - b);
+
+  for (var i=0; i<arr.length; i++) {
+    if (num <= arr[i]) {
+      return i;
+    }
+  }
+  return arr.length;
+}
+
+getIndexToIns([40, 60], 50);
+
+
+//#20 
