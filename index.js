@@ -259,4 +259,26 @@ function getIndexToIns(arr, num) {
 getIndexToIns([40, 60], 50);
 
 
-//#20 
+//#20 Return Largest Numbers in Arrays 
+//Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+//Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
+//Takeaways: 
+//This is not working below. What am I missing. 
+function largestOfFour(arr) {
+
+  const highest = [];
+
+  for (const elem of arr) {
+    elem.sort(function(a,b) {
+      return a - b;
+    });
+ 
+   highest.push(elem[elem.length-1]);
+    
+  }
+  console.log(highest)
+  return highest;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
