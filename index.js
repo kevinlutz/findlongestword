@@ -282,3 +282,69 @@ function largestOfFour(arr) {
 
 largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
 
+//#21 Big Sort Hacker Rank
+function bigSorting(unsorted) {
+    if (unsorted.length > 10**5 * 2) return
+    unsorted.sort(function(a, b) {
+        return a - b;
+    });
+    return unsorted;
+}
+
+
+//#22 Diagonal Difference Hacker Rank
+function diagonalDifference(arr) {
+    let lineOne = 0;
+    let lineTwo = 0 
+    for (var i=0; i < arr.length; i++){
+        const num = arr[i][i]
+        lineOne += num
+    }
+    let index = 0;
+    for (var i=arr.length-1; i >= 0; i--){
+        const number = arr[index][i]
+        index += 1
+        lineTwo += number
+    }
+       return Math.abs(lineOne - lineTwo )
+}
+
+
+//#23 Seek And Destroy
+//You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+//Note: You have to use the arguments object.
+//This is not working yet. Not sure how to use 'rest' - ??
+function destroyer(arr) {
+ const unique = []
+for (var i=arr[0][0]; i < arr[0].length; i++) {
+  if(i !== arr...rest){
+    unique.push(i)
+  }
+  return unique
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+
+1. loop through index 0
+2. if each elem !== the rest of arr
+3. push to const unique = []
+
+
+//#24
+//Palindrome Checker
+//Return true if the given string is a palindrome. Otherwise, return false.
+//A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
+//Note: You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
+function palindrome(str) {
+  var reg = /[\W_]/g;
+  var newStr = str.toLowerCase().replace(reg, '');
+  var reverse = newStr.split('').reverse().join('');
+  return (reverse === newStr ? true : false)
+  }
+
+palindrome("eye");
+
+
+//#25
+//
