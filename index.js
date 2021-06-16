@@ -380,4 +380,45 @@ function convertToRoman(num) {
 convertToRoman(3);
 
 //#26
+//Ceasar's Cipher
+function rot13(str) {
+  var solved = '';
+  for (var i=0; i<str.length; i++){
+    var asciiNum = str[i].charCodeAt();
+    if (asciiNum >= 65 && asciiNum <= 77) {
+      solved += String.fromCharCode(asciiNum + 13);
+    } else if (asciiNum >= 78 && asciiNum <= 90) {
+      solved += String.fromCharCode(asciiNum - 13);
+    } else {
+      solved += str[i];
+  }
+}
+  return solved;
+}
 
+//[a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+
+rot13("A");
+
+
+//#27
+//Telephone Number Validator
+//Return true if the passed string looks like a valid US phone number.
+//The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):
+
+555-555-5555
+(555)555-5555
+(555) 555-5555
+555 555 5555
+5555555555
+1 555 555 5555
+
+function telephoneCheck(str) {
+  let regEx = /^(1\s?)?(\d{3}|\(\d{3}\))[\-\s]?\d{3}[\-\s]?\d{4}$/;
+  return regEx.test(str);
+}
+
+telephoneCheck("555-555-5555");
+
+
+//#
