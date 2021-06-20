@@ -421,4 +421,24 @@ function telephoneCheck(str) {
 telephoneCheck("555-555-5555");
 
 
-//#
+//#28 Sort Union - freecodecamp
+//Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.
+//In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.
+//The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.
+//Below, can we replace indexOf with includes??
+
+function uniteUnique(collection) {
+  const unique = [];
+  let values = Object.values(arguments);
+
+  values.forEach(group => {
+    group.forEach(individual => {
+      if (unique.indexOf(individual) === -1) {
+        unique.push(individual);
+      }
+    });
+  });
+  return unique
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
